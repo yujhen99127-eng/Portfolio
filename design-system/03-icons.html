@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>設計系統：圖示</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+TC:wght@400;500;700&amp;family=Space+Grotesk:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FAFAF8}
+</style>
+</head>
+<body>
+<div style="width: 1440px; min-height: 1500px; box-sizing: border-box; padding: 80px; background: #FAFAF8; color: #16181D; font-family: Inter, 'Noto Sans TC', system-ui, sans-serif; font-size: 16px; line-height: 1.6; display: flex; flex-direction: column; gap: 64px">
+
+<header style="display: flex; flex-direction: column; gap: 12px; padding-bottom: 40px; border-bottom: 1px solid #E4E4DF">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #6A6E77">Design System · 03</p>
+<h1 style="margin: 0; font-family: 'Space Grotesk', 'Noto Sans TC', sans-serif; font-weight: 600; font-size: 56px; letter-spacing: -0.02em; line-height: 1.15">圖示 Icons</h1>
+<p style="margin: 0; max-width: 720px; color: #4A4E57; font-size: 17px">線性圖示，24 × 24 網格、1.6px 線寬、圓角端點。顏色跟隨文字（currentColor），與文字搭配時大小對齊行高。</p>
+</header>
+
+<section style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px">
+<div style="padding: 24px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; color: #6A6E77">網格 Grid</span><span style="font-size: 20px; font-weight: 600">24 × 24 px</span></div>
+<div style="padding: 24px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; color: #6A6E77">線寬 Stroke</span><span style="font-size: 20px; font-weight: 600">1.6 px · Round</span></div>
+<div style="padding: 24px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; color: #6A6E77">尺寸 Size</span><span style="font-size: 20px; font-weight: 600">16 · 20 · 24 · 32</span></div>
+<div style="padding: 24px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; color: #6A6E77">顏色 Color</span><span style="font-size: 20px; font-weight: 600">currentColor</span></div>
+</section>
+
+
+<section style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-size: 22px; font-weight: 600">導覽 Navigation</h2>
+<ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 12px">
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">arrow-left</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">arrow-right</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">arrow-up-right</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">chevron-down</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">chevron-right</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">menu</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">close</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">external-link</span>
+</li>
+
+</ul>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-size: 22px; font-weight: 600">操作 Action</h2>
+<ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 12px">
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11a6 6 0 1 0 12 0a6 6 0 1 0-12 0M20 20l-4.5-4.5"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">search</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">plus</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">check</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">download</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">edit</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V4.5h6V7M6.5 7l1 13h9l1-13"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">trash</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16l-6 8v6l-4-2v-4z"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">filter</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">link</span>
+</li>
+
+</ul>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-size: 22px; font-weight: 600">內容 Content</h2>
+<ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 12px">
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zM3 7l9 6 9-6"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">mail</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 5h13a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zM3.5 10h17M8 3v4M16 3v4"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">calendar</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8a4 4 0 1 0 8 0a4 4 0 1 0-8 0M4 20c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">user</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 4.5h13a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2zM7.5 10a1.5 1.5 0 1 0 3 0a1.5 1.5 0 1 0-3 0M20.5 16l-5-5-9 8.5"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">image</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">grid</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11zM9.5 10a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0-5 0"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">map-pin</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">heart</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.8z"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">star</span>
+</li>
+
+</ul>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-size: 22px; font-weight: 600">狀態 Status</h2>
+<ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 12px">
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0M12 11v5M12 8h.01"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">info</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0M8 12.5l3 3 5-6"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">check-circle</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l9 16H3zM12 10v4M12 17h.01"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">alert</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15zM10 20.5h4"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">bell</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12zM9 12a3 3 0 1 0 6 0a3 3 0 1 0-6 0"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">eye</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8M14 7a2 2 0 1 0 4 0a2 2 0 1 0-4 0M8 17a2 2 0 1 0 4 0a2 2 0 1 0-4 0"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">sliders</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0M12 7v5l3 2"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">clock</span>
+</li>
+
+<li style="height: 120px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0M3 12h18M12 3c2.5 2.5 3.8 5.5 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.5-3.8-9S9.5 5.5 12 3z"></path></svg>
+<span style="font-size: 13px; color: #4A4E57">globe</span>
+</li>
+
+</ul>
+</section>
+
+
+<section style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-size: 22px; font-weight: 600">尺寸與搭配</h2>
+<div style="display: flex; align-items: flex-end; gap: 48px; padding: 32px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"></path></svg><span style="font-size: 13px; color: #5B5F68">16 · 小字旁</span></div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"></path></svg><span style="font-size: 13px; color: #5B5F68">20 · 按鈕內</span></div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"></path></svg><span style="font-size: 13px; color: #5B5F68">24 · 預設</span></div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px"><svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"></path></svg><span style="font-size: 13px; color: #5B5F68">32 · 插圖</span></div>
+<div style="width: 1px; align-self: stretch; background: #ECECE7"></div>
+<span style="display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 500; color: #2F5BEA">查看下一個案例<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+<span style="display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 500; color: #16181D"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>下載履歷</span>
+</div>
+</section>
+
+</div>
+</body>
+</html>

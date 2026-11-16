@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>設計系統：版面與資料元件</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+TC:wght@400;500;700&amp;family=Space+Grotesk:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FAFAF8}
+a{color:#16181D;text-decoration:none}
+</style>
+</head>
+<body>
+<div style="width: 1440px; min-height: 3900px; box-sizing: border-box; padding: 80px; background: #FAFAF8; color: #16181D; font-family: Inter, 'Noto Sans TC', system-ui, sans-serif; font-size: 16px; line-height: 1.6; display: flex; flex-direction: column; gap: 64px">
+
+<header style="display: flex; flex-direction: column; gap: 12px; padding-bottom: 40px; border-bottom: 1px solid #E4E4DF">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #6A6E77">Design System · 05</p>
+<h1 style="margin: 0; font-family: 'Space Grotesk', 'Noto Sans TC', sans-serif; font-weight: 600; font-size: 56px; letter-spacing: -0.02em; line-height: 1.15">版面與資料元件</h1>
+<p style="margin: 0; max-width: 720px; color: #4A4E57; font-size: 17px">App Bar、導覽、卡片、日曆、通知與對話框。分頁標籤與日曆可以直接點選操作。</p>
+</header>
+
+<!-- App bars -->
+<section style="display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 4px"><h2 style="margin: 0; font-size: 24px; font-weight: 600">App Bar · 導覽列</h2><p style="margin: 0; font-size: 14px; color: #5B5F68">桌機高 80px、內容寬 1200px；手機高 64px，選單收合為漢堡按鈕。</p></div>
+<div style="border-radius: 16px; border: 1px solid #ECECE7; overflow: hidden; background: #FAFAF8">
+<nav aria-label="桌機導覽範例" style="padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid #E8E8E4">
+<a href="#" style="font-family: 'Space Grotesk', 'Noto Sans TC', sans-serif; font-weight: 600; font-size: 20px; display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="width: 12px; height: 12px; border-radius: 50%; background: #2F5BEA"></span>[你的名字]</a>
+<div style="display: flex; align-items: center; gap: 28px; font-size: 15px">
+<a href="#" aria-current="page" style="padding: 10px 0; font-weight: 600; border-bottom: 2px solid #16181D">作品</a>
+<a href="#" style="padding: 10px 0">關於我</a>
+<a href="#" style="padding: 10px 0">設計流程</a>
+<a href="#" style="padding: 10px 18px; border: 1px solid #16181D; border-radius: 999px; font-weight: 500">聯絡我</a>
+</div>
+</nav>
+<div style="padding: 14px 32px; font-size: 13px; color: #5B5F68">Desktop · 目前頁面以粗體與底線標示</div>
+</div>
+<div style="display: flex; gap: 32px; align-items: flex-start">
+<div style="width: 390px; border-radius: 16px; border: 1px solid #ECECE7; overflow: hidden; background: #FAFAF8">
+<nav aria-label="手機導覽範例" style="height: 64px; padding: 0 12px 0 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E8E8E4">
+<a href="#" style="font-family: 'Space Grotesk', 'Noto Sans TC', sans-serif; font-weight: 600; font-size: 18px; display: flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #2F5BEA"></span>[你的名字]</a>
+<button type="button" aria-label="開啟選單" aria-expanded="false" style="width: 44px; height: 44px; border: 0; background: transparent; color: #16181D; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+</nav>
+<div style="padding: 14px 20px; font-size: 13px; color: #5B5F68">Mobile · 收合</div>
+</div>
+<div style="width: 390px; border-radius: 16px; border: 1px solid #ECECE7; overflow: hidden; background: #FAFAF8">
+<nav aria-label="手機選單展開範例" style="height: 64px; padding: 0 12px 0 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E8E8E4">
+<a href="#" style="font-family: 'Space Grotesk', 'Noto Sans TC', sans-serif; font-weight: 600; font-size: 18px; display: flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #2F5BEA"></span>[你的名字]</a>
+<button type="button" aria-label="關閉選單" aria-expanded="true" style="width: 44px; height: 44px; border: 0; background: transparent; color: #16181D; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+</nav>
+<div style="padding: 16px 20px 24px; display: flex; flex-direction: column; background: #FFFFFF">
+<a href="#" style="min-height: 52px; display: flex; align-items: center; justify-content: space-between; font-size: 20px; font-weight: 600; border-bottom: 1px solid #ECECE7">作品<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></a>
+<a href="#" style="min-height: 52px; display: flex; align-items: center; justify-content: space-between; font-size: 20px; font-weight: 500; border-bottom: 1px solid #ECECE7">關於我<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></a>
+<a href="#" style="min-height: 52px; display: flex; align-items: center; justify-content: space-between; font-size: 20px; font-weight: 500; border-bottom: 1px solid #ECECE7">設計流程<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></a>
+<a href="#" style="margin-top: 20px; height: 52px; border-radius: 999px; background: #16181D; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 500">聯絡我</a>
+</div>
+</div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 24px">
+<div style="padding: 28px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 13px; color: #6A6E77">Breadcrumb</span>
+<nav aria-label="麵包屑">
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; align-items: center; gap: 8px; font-size: 14px">
+<li><a href="#" style="color: #5B5F68">首頁</a></li>
+<li aria-hidden="true" style="color: #A3A6AD">/</li>
+<li><a href="#" style="color: #5B5F68">作品</a></li>
+<li aria-hidden="true" style="color: #A3A6AD">/</li>
+<li aria-current="page" style="font-weight: 500">[專案名稱 A]</li>
+</ol>
+</nav>
+</div>
+<div style="padding: 28px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 13px; color: #6A6E77">Pagination</span>
+<nav aria-label="分頁" style="display: flex; align-items: center; gap: 6px">
+<a href="#" aria-label="上一頁" style="width: 44px; height: 44px; border-radius: 999px; border: 1px solid #D6D6D0; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg></a>
+<a href="#" aria-current="page" style="width: 44px; height: 44px; border-radius: 999px; background: #16181D; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 500">1</a>
+<a href="#" style="width: 44px; height: 44px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-size: 15px">2</a>
+<a href="#" style="width: 44px; height: 44px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-size: 15px">3</a>
+<span style="width: 28px; text-align: center; color: #5B5F68">…</span>
+<a href="#" style="width: 44px; height: 44px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-size: 15px">8</a>
+<a href="#" aria-label="下一頁" style="width: 44px; height: 44px; border-radius: 999px; border: 1px solid #D6D6D0; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></a>
+</nav>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Tabs -->
+<section style="display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 4px"><h2 style="margin: 0; font-size: 24px; font-weight: 600">分頁標籤 Tabs</h2><p style="margin: 0; font-size: 14px; color: #5B5F68">選取中：文字 600 + 2px 底線；未選取：Neutral 600。</p></div>
+<div style="padding: 32px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 24px">
+<div role="tablist" aria-label="案例內容" style="display: flex; gap: 32px; border-bottom: 1px solid #ECECE7">
+
+<button type="button" role="tab" aria-selected="true" style="height: 48px; padding: 0; margin-bottom: -1px; border: 0; border-bottom: 2px solid #16181D; background: transparent; color: #16181D; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">概覽</button>
+
+<button type="button" role="tab" aria-selected="false" style="height: 48px; padding: 0; margin-bottom: -1px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: #5B5F68; font: inherit; font-size: 15px; font-weight: 400; cursor: pointer">研究</button>
+
+<button type="button" role="tab" aria-selected="false" style="height: 48px; padding: 0; margin-bottom: -1px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: #5B5F68; font: inherit; font-size: 15px; font-weight: 400; cursor: pointer">設計</button>
+
+<button type="button" role="tab" aria-selected="false" style="height: 48px; padding: 0; margin-bottom: -1px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: #5B5F68; font: inherit; font-size: 15px; font-weight: 400; cursor: pointer">成果</button>
+
+</div>
+<p role="tabpanel" style="margin: 0; font-size: 15px; color: #4A4E57">概覽：專案背景、目標使用者與設計目標。</p>
+</div>
+</section>
+
+<!-- Cards -->
+<section style="display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 4px"><h2 style="margin: 0; font-size: 24px; font-weight: 600">卡片 Cards</h2><p style="margin: 0; font-size: 14px; color: #5B5F68">白底 + 1px Neutral 100 邊框、圓角 16；滑過時陰影 0 20 48 / 8%。</p></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start">
+<a href="#" style="display: flex; flex-direction: column; gap: 16px; color: #16181D">
+<div style="aspect-ratio: 16 / 11; border-radius: 16px; background: #EEF1FB; border: 1px solid #ECECE7; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #5B5F68">[作品封面]</div>
+<div style="display: flex; justify-content: space-between; gap: 12px"><div><h3 style="margin: 0 0 4px; font-size: 20px; font-weight: 600">[專案名稱]</h3><p style="margin: 0; font-size: 14px; color: #5B5F68">[一句話說明成果]</p></div><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 4px"><path d="M7 17L17 7M9 7h8v8"></path></svg></div>
+<div style="display: flex; gap: 8px"><span style="font-size: 13px; padding: 4px 12px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E4E4DF; color: #4A4E57">App 設計</span><span style="font-size: 13px; padding: 4px 12px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E4E4DF; color: #4A4E57">使用者研究</span></div>
+<span style="font-size: 12px; color: #6A6E77">Project Card</span>
+</a>
+<div style="display: flex; flex-direction: column; gap: 24px">
+<div style="padding: 28px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 600; color: #2F5BEA">01</span>
+<h3 style="margin: 0; font-size: 20px; font-weight: 600">探索</h3>
+<p style="margin: 0; font-size: 15px; color: #5B5F68">透過訪談與數據分析，釐清使用者真正的需求。</p>
+</div>
+<span style="font-size: 12px; color: #6A6E77; margin-top: -12px">Info Card</span>
+<div style="padding: 28px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: 'Space Grotesk', 'Noto Sans TC', sans-serif; font-size: 44px; font-weight: 600; line-height: 1.1; color: #2F5BEA">[+00%]</span>
+<span style="font-size: 15px; color: #4A4E57">[指標名稱]</span>
+</div>
+<span style="font-size: 12px; color: #6A6E77; margin-top: -12px">Stat Card</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 24px">
+<div style="padding: 28px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; gap: 16px; align-items: flex-start">
+<span style="width: 48px; height: 48px; flex: none; border-radius: 50%; background: #E0E6FB; color: #1D3A9C; font-size: 17px; font-weight: 600; display: flex; align-items: center; justify-content: center">[縮]</span>
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; color: #6A6E77">[2024 – 至今]</span><h3 style="margin: 0; font-size: 18px; font-weight: 600">[職稱]</h3><span style="font-size: 14px; color: #2F5BEA; font-weight: 500">[公司名稱]</span></div>
+</div>
+<span style="font-size: 12px; color: #6A6E77; margin-top: -12px">Experience Card</span>
+<div style="padding: 32px; border-radius: 16px; background: #F1F3FB; display: flex; flex-direction: column; align-items: flex-start; gap: 14px">
+<h3 style="margin: 0; font-family: 'Space Grotesk', 'Noto Sans TC', sans-serif; font-size: 26px; font-weight: 600; line-height: 1.3">有想一起實現的產品嗎？</h3>
+<a href="#" style="height: 44px; padding: 0 20px; border-radius: 999px; background: #16181D; color: #FFFFFF; display: flex; align-items: center; font-size: 14px; font-weight: 500">聯絡我</a>
+</div>
+<span style="font-size: 12px; color: #6A6E77; margin-top: -12px">CTA Card</span>
+</div>
+</div>
+</section>
+
+<!-- Calendar -->
+<section style="display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 4px"><h2 style="margin: 0; font-size: 24px; font-weight: 600">日曆 Calendar · 日期選擇器</h2><p style="margin: 0; font-size: 14px; color: #5B5F68">可用於預約面談時段。今天以外框標示、選取日以深色填滿、有行程的日期下方加圓點。</p></div>
+<div style="display: grid; grid-template-columns: 400px 400px minmax(0, 1fr); gap: 32px; align-items: start">
+<div style="padding: 24px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; box-shadow: 0 20px 48px rgba(22,24,29,0.06); display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<button type="button" aria-label="上個月" style="width: 44px; height: 44px; border-radius: 999px; border: 0; background: transparent; color: #16181D; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg></button>
+<span style="font-size: 17px; font-weight: 600">2026 年 11 月</span>
+<button type="button" aria-label="下個月" style="width: 44px; height: 44px; border-radius: 999px; border: 0; background: transparent; color: #16181D; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button>
+</div>
+<div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; text-align: center; font-size: 13px; color: #6A6E77">
+<span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px">
+
+<button type="button" aria-label="11 月 1 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>1</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 2 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>2</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 3 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>3</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 4 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>4</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 5 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>5</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 6 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>6</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 7 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>7</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 8 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>8</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 9 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>9</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 10 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>10</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 11 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>11</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 12 日" aria-pressed="true" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: #16181D; color: #FFFFFF; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>12</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 13 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>13</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 14 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>14</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 15 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>15</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 16 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>16</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 17 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>17</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 18 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>18</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: #E0603A"></span>
+</button>
+
+<button type="button" aria-label="11 月 19 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>19</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 20 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>20</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 21 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>21</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 22 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>22</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 23 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>23</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 24 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>24</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 25 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>25</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: #E0603A"></span>
+</button>
+
+<button type="button" aria-label="11 月 26 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>26</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 27 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>27</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 28 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>28</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 29 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>29</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="11 月 30 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #16181D; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>30</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="12 月 1 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #A3A6AD; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>1</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="12 月 2 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #A3A6AD; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>2</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="12 月 3 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #A3A6AD; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>3</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="12 月 4 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #A3A6AD; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>4</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+<button type="button" aria-label="12 月 5 日" aria-pressed="false" style="height: 44px; border-radius: 999px; border: 1.5px solid transparent; background: transparent; color: #A3A6AD; font: inherit; font-size: 14px; font-weight: 400; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0">
+<span>5</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: transparent"></span>
+</button>
+
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="date-field" style="font-size: 14px; font-weight: 500">面談日期 · Date Field</label>
+<div style="position: relative; display: flex; align-items: center">
+<input id="date-field" type="text" value="2026 / 11 / 12" readonly style="width: 100%; box-sizing: border-box; height: 48px; padding: 0 44px 0 16px; border-radius: 12px; border: 1.5px solid #2F5BEA; box-shadow: 0 0 0 4px #E0E6FB; background: #FFFFFF; font: inherit; font-size: 15px; color: #16181D; outline: none">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B5F68" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; right: 14px"><path d="M5.5 5h13a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zM3.5 10h17M8 3v4M16 3v4"></path></svg>
+</div>
+</div>
+<div style="padding: 20px 24px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 12px">
+<span data-date-label style="font-size: 14px; font-weight: 600">2026 / 11 / 12 可預約時段</span>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+<button type="button" style="height: 44px; border-radius: 10px; border: 1px solid #D6D6D0; background: #FFFFFF; font: inherit; font-size: 14px">10:00</button>
+<button type="button" aria-pressed="true" style="height: 44px; border-radius: 10px; border: 1.5px solid #2F5BEA; background: #F1F3FB; color: #1D3A9C; font: inherit; font-size: 14px; font-weight: 600">14:00</button>
+<button type="button" style="height: 44px; border-radius: 10px; border: 1px solid #D6D6D0; background: #FFFFFF; font: inherit; font-size: 14px">16:30</button>
+</div>
+</div>
+</div>
+<ul style="margin: 0; padding: 24px 28px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; list-style: none; display: flex; flex-direction: column; gap: 14px; font-size: 14px; color: #3E424B">
+<li style="display: flex; align-items: center; gap: 12px"><span style="width: 32px; height: 32px; border-radius: 999px; background: #16181D; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600">12</span>選取 · Neutral 900</li>
+<li style="display: flex; align-items: center; gap: 12px"><span style="width: 32px; height: 32px; box-sizing: border-box; border-radius: 999px; border: 1.5px solid #2F5BEA; color: #2F5BEA; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600">12</span>今天 · Primary 外框</li>
+<li style="display: flex; align-items: center; gap: 12px"><span style="width: 32px; height: 32px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 13px">18<span style="width: 4px; height: 4px; border-radius: 50%; background: #E0603A"></span></span>有行程 · Secondary 圓點</li>
+<li style="display: flex; align-items: center; gap: 12px"><span style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #A3A6AD">1</span>非本月 · Neutral 400</li>
+</ul>
+</div>
+</section>
+
+<!-- Alerts / toast -->
+<section style="display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 4px"><h2 style="margin: 0; font-size: 24px; font-weight: 600">通知 Alert · Toast</h2><p style="margin: 0; font-size: 14px; color: #5B5F68">每種狀態都同時用圖示與文字表達，不只靠顏色。</p></div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<div role="status" style="padding: 16px 20px; border-radius: 12px; background: #F1F3FB; color: #1D3A9C; display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0M12 11v5M12 8h.01"></path></svg><div style="display: flex; flex-direction: column"><strong style="font-weight: 600">提示</strong><span style="font-size: 14px; color: #3E424B">此案例包含保密資訊，部分畫面已做模糊處理。</span></div></div>
+<div role="status" style="padding: 16px 20px; border-radius: 12px; background: #EAF6EF; color: #1F6B3E; display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0M8 12.5l3 3 5-6"></path></svg><div style="display: flex; flex-direction: column"><strong style="font-weight: 600">訊息已送出</strong><span style="font-size: 14px; color: #3E424B">感謝你的來信，我會在 2 個工作天內回覆。</span></div></div>
+<div role="status" style="padding: 16px 20px; border-radius: 12px; background: #FCF4E3; color: #7A4E10; display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M12 4l9 16H3zM12 10v4M12 17h.01"></path></svg><div style="display: flex; flex-direction: column"><strong style="font-weight: 600">注意</strong><span style="font-size: 14px; color: #3E424B">原型檔案較大，建議使用桌機瀏覽。</span></div></div>
+<div role="alert" style="padding: 16px 20px; border-radius: 12px; background: #FCEDED; color: #A12B2B; display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0M12 7.5v5M12 16h.01"></path></svg><div style="display: flex; flex-direction: column"><strong style="font-weight: 600">傳送失敗</strong><span style="font-size: 14px; color: #3E424B">網路連線不穩，請稍後再試一次。</span></div></div>
+</div>
+<div style="display: flex; gap: 16px; align-items: center">
+<div role="status" style="padding: 14px 16px 14px 20px; border-radius: 12px; background: #16181D; color: #FFFFFF; display: flex; align-items: center; gap: 16px; box-shadow: 0 16px 40px rgba(22,24,29,0.18)"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7FD3A1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"></path></svg><span style="font-size: 15px">已複製 Email 到剪貼簿</span><button type="button" style="height: 36px; padding: 0 12px; border-radius: 8px; border: 0; background: transparent; color: #C2CEF7; font: inherit; font-size: 14px; font-weight: 500">復原</button></div>
+<span style="font-size: 13px; color: #6A6E77">Toast · 畫面底部置中，4 秒後自動消失</span>
+</div>
+</section>
+
+<!-- Modal + empty state -->
+<section style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 4px"><h2 style="margin: 0; font-size: 24px; font-weight: 600">對話框 Modal</h2><p style="margin: 0; font-size: 14px; color: #5B5F68">遮罩 Neutral 900 / 40%；寬 480、圓角 20。</p></div>
+<div style="height: 400px; border-radius: 16px; background: rgba(22,24,29,0.4); display: flex; align-items: center; justify-content: center">
+<div role="dialog" aria-modal="true" aria-labelledby="dlg-title" style="width: 440px; padding: 28px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 24px 64px rgba(22,24,29,0.2); display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px"><h3 id="dlg-title" style="margin: 0; font-size: 20px; font-weight: 600">輸入密碼以查看案例</h3><button type="button" aria-label="關閉" style="width: 44px; height: 44px; margin: -10px -10px 0 0; border-radius: 999px; border: 0; background: transparent; color: #16181D; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div>
+<p style="margin: 0; font-size: 15px; color: #4A4E57">此專案受保密協議保護，請輸入我提供的密碼。</p>
+<label for="dlg-pw" style="font-size: 14px; font-weight: 500">密碼</label>
+<input id="dlg-pw" type="password" placeholder="輸入密碼" style="height: 48px; margin-top: -6px; padding: 0 16px; border-radius: 12px; border: 1px solid #D6D6D0; font: inherit; font-size: 15px; outline: none">
+<div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 6px"><button type="button" style="height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid #D6D6D0; background: #FFFFFF; font: inherit; font-size: 14px; font-weight: 500">取消</button><button type="button" style="height: 44px; padding: 0 20px; border-radius: 999px; border: 0; background: #16181D; color: #FFFFFF; font: inherit; font-size: 14px; font-weight: 500">查看案例</button></div>
+</div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 4px"><h2 style="margin: 0; font-size: 24px; font-weight: 600">空狀態 Empty State</h2><p style="margin: 0; font-size: 14px; color: #5B5F68">篩選或搜尋沒有結果時，給出下一步。</p></div>
+<div style="height: 400px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center; padding: 32px; box-sizing: border-box">
+<span style="width: 64px; height: 64px; border-radius: 50%; background: #F4F4F0; color: #5B5F68; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11a6 6 0 1 0 12 0a6 6 0 1 0-12 0M20 20l-4.5-4.5"></path></svg></span>
+<h3 style="margin: 0; font-size: 20px; font-weight: 600">找不到相關作品</h3>
+<p style="margin: 0; max-width: 320px; font-size: 15px; color: #5B5F68">試試其他類別，或直接寫信告訴我你想看的專案類型。</p>
+<button type="button" style="margin-top: 6px; height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid #D6D6D0; background: #FFFFFF; font: inherit; font-size: 14px; font-weight: 500">查看全部作品</button>
+</div>
+</div>
+</section>
+
+</div>
+<script src="ds.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>設計系統：微互動</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+TC:wght@400;500;700&amp;family=Space+Grotesk:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FAFAF8}
+a{color:#16181D;text-decoration:none}
+[data-m="btn"]{transition:transform 200ms cubic-bezier(.2,.8,.2,1), box-shadow 200ms cubic-bezier(.2,.8,.2,1), background-color 200ms cubic-bezier(.2,.8,.2,1)}
+[data-m="btn"]:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(22,24,29,.18)}
+[data-m="btn"]:active{transform:translateY(0) scale(.97);box-shadow:none;transition-duration:120ms}
+[data-m="btn-ghost"]{transition:background-color 200ms cubic-bezier(.2,.8,.2,1), border-color 200ms cubic-bezier(.2,.8,.2,1), transform 120ms cubic-bezier(.2,.8,.2,1)}
+[data-m="btn-ghost"]:hover{background:#F1F3FB;border-color:#2F5BEA}
+[data-m="btn-ghost"]:active{transform:scale(.97)}
+[data-m="card"]{transition:transform 320ms cubic-bezier(.2,.8,.2,1), box-shadow 320ms cubic-bezier(.2,.8,.2,1), border-color 320ms cubic-bezier(.2,.8,.2,1)}
+[data-m="card"]:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(22,24,29,.12);border-color:#C2CEF7}
+[data-m="card"] [data-m="cover"]{transition:transform 600ms cubic-bezier(.2,.8,.2,1)}
+[data-m="card"]:hover [data-m="cover"]{transform:scale(1.06)}
+[data-m="card"] [data-m="arrow"]{transition:transform 320ms cubic-bezier(.2,.8,.2,1)}
+[data-m="card"]:hover [data-m="arrow"]{transform:translate(4px,-4px)}
+[data-m="link"]{background:linear-gradient(#2F5BEA,#2F5BEA) no-repeat 0 100%/0 2px;transition:background-size 320ms cubic-bezier(.2,.8,.2,1);padding-bottom:4px}
+[data-m="link"]:hover{background-size:100% 2px}
+@keyframes m-pop{0%{transform:scale(1)}40%{transform:scale(1.35)}100%{transform:scale(1)}}
+[data-m="heart"][data-on="true"] svg{animation:m-pop 360ms cubic-bezier(.2,.8,.2,1)}
+[data-m="heart"]{transition:background-color 200ms cubic-bezier(.2,.8,.2,1), border-color 200ms cubic-bezier(.2,.8,.2,1)}
+[data-m="knob"]{transition:transform 240ms cubic-bezier(.2,.8,.2,1)}
+[data-m="track"]{transition:background-color 240ms cubic-bezier(.2,.8,.2,1)}
+[data-m="check"] path{stroke-dasharray:24;transition:stroke-dashoffset 240ms cubic-bezier(.2,.8,.2,1)}
+[data-m="field"] label{transition:transform 200ms cubic-bezier(.2,.8,.2,1), color 200ms cubic-bezier(.2,.8,.2,1), font-size 200ms cubic-bezier(.2,.8,.2,1)}
+[data-m="field"] input{transition:border-color 200ms cubic-bezier(.2,.8,.2,1), box-shadow 200ms cubic-bezier(.2,.8,.2,1)}
+[data-m="field"] input:focus{outline:none;border-color:#2F5BEA;box-shadow:0 0 0 4px #E0E6FB}
+[data-m="field"] input:focus + label,[data-m="field"] input:not(:placeholder-shown) + label{transform:translateY(-14px);font-size:12px;color:#2F5BEA}
+[data-m="field"] [data-m="err"]{opacity:0;transform:translateY(-4px);transition:opacity 200ms cubic-bezier(.2,.8,.2,1), transform 200ms cubic-bezier(.2,.8,.2,1)}
+[data-m="field"] input:not(:placeholder-shown):not(:focus):invalid{border-color:#D14343}
+[data-m="field"] input:not(:placeholder-shown):not(:focus):invalid ~ [data-m="err"]{opacity:1;transform:none}
+[data-m="acc"]{display:grid;transition:grid-template-rows 320ms cubic-bezier(.2,.8,.2,1)}
+[data-m="chev"]{transition:transform 320ms cubic-bezier(.2,.8,.2,1)}
+[data-m="ind"]{transition:transform 320ms cubic-bezier(.2,.8,.2,1)}
+@keyframes m-spin{to{transform:rotate(360deg)}}
+[data-m="spin"]{animation:m-spin 800ms linear infinite}
+@keyframes m-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes m-in0{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+[data-m="reveal"][data-k="k0"]{animation:m-in0 600ms cubic-bezier(.2,.8,.2,1) both}
+@keyframes m-in1{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+[data-m="reveal"][data-k="k1"]{animation:m-in1 600ms cubic-bezier(.2,.8,.2,1) both}
+@keyframes m-in2{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+[data-m="reveal"][data-k="k2"]{animation:m-in2 600ms cubic-bezier(.2,.8,.2,1) both}
+@keyframes m-in3{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+[data-m="reveal"][data-k="k3"]{animation:m-in3 600ms cubic-bezier(.2,.8,.2,1) both}
+button:focus-visible,a:focus-visible{outline:2px solid #2F5BEA;outline-offset:3px}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}}
+</style>
+</head>
+<body>
+<div style="width: 1440px; min-height: 2700px; box-sizing: border-box; padding: 80px; background: #FAFAF8; color: #16181D; font-family: Inter, 'Noto Sans TC', system-ui, sans-serif; font-size: 16px; line-height: 1.6; display: flex; flex-direction: column; gap: 48px">
+
+<header style="display: flex; flex-direction: column; gap: 12px; padding-bottom: 40px; border-bottom: 1px solid #E4E4DF">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #6A6E77">Design System · 06</p>
+<h1 style="margin: 0; font-family: 'Space Grotesk', 'Noto Sans TC', sans-serif; font-weight: 600; font-size: 56px; letter-spacing: -0.02em; line-height: 1.15">微互動 Motion</h1>
+<p style="margin: 0; max-width: 760px; color: #4A4E57; font-size: 17px">八組可以實際操作的微互動，請直接滑過、點擊或輸入。動態只用來回饋操作與引導視線；系統開啟「減少動態」時會自動停用。</p>
+</header>
+
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px"><div style="padding: 16px 20px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Space Grotesk', monospace; font-size: 16px; font-weight: 600; color: #16181D">120ms</span><span style="font-size: 13px; color: #5B5F68">按下回饋</span></div><div style="padding: 16px 20px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Space Grotesk', monospace; font-size: 16px; font-weight: 600; color: #16181D">200ms</span><span style="font-size: 13px; color: #5B5F68">滑過、聚焦</span></div><div style="padding: 16px 20px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Space Grotesk', monospace; font-size: 16px; font-weight: 600; color: #16181D">320ms</span><span style="font-size: 13px; color: #5B5F68">展開、切換</span></div><div style="padding: 16px 20px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Space Grotesk', monospace; font-size: 16px; font-weight: 600; color: #16181D">600ms</span><span style="font-size: 13px; color: #5B5F68">進場</span></div><div style="padding: 16px 20px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Space Grotesk', monospace; font-size: 16px; font-weight: 600; color: #16181D">cubic-bezier(.2,.8,.2,1)</span><span style="font-size: 13px; color: #5B5F68">共用緩動曲線</span></div></div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px">
+<section style="padding: 32px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: #2F5BEA">01</span>
+<h2 style="margin: 0; font-size: 22px; font-weight: 600">按鈕與連結</h2>
+<p style="margin: 0; font-size: 14px; color: #5B5F68">滑過 200ms 上浮 2px、按下 120ms 縮到 97%；文字連結的底線由左滑入。</p>
+</div>
+<div style="flex: 1; min-height: 200px; padding: 32px; border-radius: 12px; background: #FAFAF8; border: 1px solid #ECECE7; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px">
+<button type="button" data-m="btn" style="font: inherit; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 26px; border-radius: 999px; font-size: 15px; font-weight: 500; border: 0; background: #16181D; color: #FFFFFF">查看作品</button>
+<button type="button" data-m="btn-ghost" style="font: inherit; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 26px; border-radius: 999px; font-size: 15px; font-weight: 500; border: 1px solid #D6D6D0; background: #FFFFFF; color: #16181D">下載履歷</button>
+<a href="#" data-m="link" style="font-size: 15px; font-weight: 500; color: #2F5BEA">更多關於我</a>
+</div>
+</section>
+<section style="padding: 32px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: #2F5BEA">02</span>
+<h2 style="margin: 0; font-size: 22px; font-weight: 600">送出狀態</h2>
+<p style="margin: 0; font-size: 14px; color: #5B5F68">點擊後 320ms 轉場：待命 → 處理中（旋轉圖示）→ 完成（綠色勾選），1.6 秒後回到待命。</p>
+</div>
+<div style="flex: 1; min-height: 200px; padding: 32px; border-radius: 12px; background: #FAFAF8; border: 1px solid #ECECE7; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px">
+<button type="button" aria-live="polite" style="font: inherit; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 26px; border-radius: 999px; font-size: 15px; font-weight: 500; min-width: 168px; border: 0; background: #16181D; color: #FFFFFF; transition: background-color 320ms cubic-bezier(.2,.8,.2,1)">
+
+
+送出表單</button>
+<span style="font-size: 13px; color: #6A6E77">點一下：送出 → 處理中 → 完成</span>
+</div>
+</section>
+<section style="padding: 32px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: #2F5BEA">03</span>
+<h2 style="margin: 0; font-size: 22px; font-weight: 600">作品卡片</h2>
+<p style="margin: 0; font-size: 14px; color: #5B5F68">滑過時卡片上浮 6px、封面放大 6%、箭頭往右上移 4px，時間 320–600ms。</p>
+</div>
+<div style="flex: 1; min-height: 200px; padding: 32px; border-radius: 12px; background: #FAFAF8; border: 1px solid #ECECE7; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px">
+<a href="#" data-m="card" style="width: 100%; max-width: 420px; padding: 16px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 14px; color: #16181D">
+<div style="aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; background: #EEF1FB"><img data-m="cover" src="../assets/images/carwash-cover.png" alt="洗車中台封面" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px"><strong style="font-size: 17px; font-weight: 600">洗車服務介面設計</strong>
+<span style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: #2F5BEA">查看案例<svg data-m="arrow" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"></path></svg></span></div>
+</a>
+</div>
+</section>
+<section style="padding: 32px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: #2F5BEA">04</span>
+<h2 style="margin: 0; font-size: 22px; font-weight: 600">收藏、開關與核取</h2>
+<p style="margin: 0; font-size: 14px; color: #5B5F68">狀態切換 240ms；收藏有 360ms 的彈跳，勾選記號以描邊方式畫出。</p>
+</div>
+<div style="flex: 1; min-height: 200px; padding: 32px; border-radius: 12px; background: #FAFAF8; border: 1px solid #ECECE7; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px">
+<button type="button" data-m="heart" data-on="false" aria-pressed="false" aria-label="收藏" style="width: 56px; height: 56px; border-radius: 50%; border: 1px solid #D6D6D0; background: #FFFFFF; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; padding: 0">
+<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16181D" stroke-width="1.8" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.6A4 4 0 0 1 12 8a4 4 0 0 1 7 2.4C19 15.6 12 20 12 20z"></path></svg></button>
+<button type="button" role="switch" aria-checked="true" aria-label="接收通知" data-m="track" style="width: 56px; height: 32px; border-radius: 999px; border: 0; background: #2F5BEA; cursor: pointer; padding: 4px; display: inline-flex; align-items: center">
+<span data-m="knob" style="width: 24px; height: 24px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 2px 6px rgba(22,24,29,.25); transform: translateX(24px)"></span></button>
+<button type="button" role="checkbox" aria-checked="true" style="font: inherit; cursor: pointer; border: 0; background: transparent; padding: 8px 0; display: inline-flex; align-items: center; gap: 10px; font-size: 15px; color: #16181D">
+<span data-m="track" style="width: 24px; height: 24px; border-radius: 6px; border: 1.5px solid #2F5BEA; background: #2F5BEA; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box"><svg data-m="check" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5" style="stroke-dashoffset: 0"></path></svg></span>記住我的選擇</button>
+</div>
+</section>
+<section style="padding: 32px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: #2F5BEA">05</span>
+<h2 style="margin: 0; font-size: 22px; font-weight: 600">輸入框</h2>
+<p style="margin: 0; font-size: 14px; color: #5B5F68">聚焦或有內容時標籤上浮並變色；離開欄位後若格式不對，200ms 淡入錯誤提示。</p>
+</div>
+<div style="flex: 1; min-height: 200px; padding: 32px; border-radius: 12px; background: #FAFAF8; border: 1px solid #ECECE7; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px">
+<div data-m="field" style="position: relative; width: 100%; max-width: 360px; display: flex; flex-direction: column; gap: 6px">
+<input id="m-email" type="email" placeholder=" " style="width: 100%; box-sizing: border-box; height: 60px; padding: 22px 16px 6px; border-radius: 12px; border: 1px solid #D6D6D0; background: #FFFFFF; font: inherit; font-size: 16px; color: #16181D">
+<label for="m-email" style="position: absolute; left: 16px; top: 18px; font-size: 16px; color: #6A6E77; pointer-events: none; transform-origin: left top">Email</label>
+<span data-m="err" role="status" style="font-size: 13px; color: #D14343">請輸入有效的 Email，例如 name@example.com</span>
+</div>
+</div>
+</section>
+<section style="padding: 32px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: #2F5BEA">06</span>
+<h2 style="margin: 0; font-size: 22px; font-weight: 600">數字跳動</h2>
+<p style="margin: 0; font-size: 14px; color: #5B5F68">成果數字在 900ms 內由 0 跳到目標值，使用等寬數字避免版面抖動。</p>
+</div>
+<div style="flex: 1; min-height: 200px; padding: 32px; border-radius: 12px; background: #FAFAF8; border: 1px solid #ECECE7; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px">
+<div style="width: 100%; display: flex; flex-direction: column; gap: 20px; align-items: center">
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; width: 100%">
+<div style="padding: 20px 16px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 600; line-height: 1.15; color: #2F5BEA; font-variant-numeric: tabular-nums" data-count="800" data-suffix="+" data-dec="0">800+</span><span style="font-size: 13px; color: #4A4E57">首 7 天售出洗車券</span></div><div style="padding: 20px 16px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 600; line-height: 1.15; color: #2F5BEA; font-variant-numeric: tabular-nums" data-count="65" data-suffix="%" data-dec="0">65%</span><span style="font-size: 13px; color: #4A4E57">年底核銷率</span></div><div style="padding: 20px 16px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 600; line-height: 1.15; color: #2F5BEA; font-variant-numeric: tabular-nums" data-count="50.2" data-suffix="%" data-dec="1">50.2%</span><span style="font-size: 13px; color: #4A4E57">系統開通率</span></div>
+</div>
+<button type="button" data-m="btn-ghost" data-replay style="font: inherit; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 26px; border-radius: 999px; font-size: 15px; font-weight: 500; min-height: 44px; border: 1px solid #D6D6D0; background: #FFFFFF; color: #16181D">重新播放</button>
+</div>
+</div>
+</section>
+<section style="padding: 32px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: #2F5BEA">07</span>
+<h2 style="margin: 0; font-size: 22px; font-weight: 600">收合說明</h2>
+<p style="margin: 0; font-size: 14px; color: #5B5F68">點擊標題展開，高度 320ms 平滑變化，箭頭同步旋轉 180°。</p>
+</div>
+<div style="flex: 1; min-height: 200px; padding: 32px; border-radius: 12px; background: #FAFAF8; border: 1px solid #ECECE7; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px">
+<div style="width: 100%; display: flex; flex-direction: column">
+<div style="border-bottom: 1px solid #E4E4DF">
+<button type="button" aria-expanded="true" style="font: inherit; cursor: pointer; width: 100%; border: 0; background: transparent; padding: 16px 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 16px; font-weight: 500; color: #16181D; text-align: left">為什麼要加動態？<svg data-m="chev" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none; transform: rotate(180deg)"><path d="M6 9l6 6 6-6"></path></svg></button>
+<div data-m="acc" style="grid-template-rows: 1fr"><div style="overflow: hidden"><p style="margin: 0; padding-bottom: 16px; font-size: 14px; color: #4A4E57">讓使用者知道操作有被接收，並把視線帶到狀態改變的地方。</p></div></div>
+</div><div style="border-bottom: 1px solid #E4E4DF">
+<button type="button" aria-expanded="false" style="font: inherit; cursor: pointer; width: 100%; border: 0; background: transparent; padding: 16px 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 16px; font-weight: 500; color: #16181D; text-align: left">動態的時間怎麼決定？<svg data-m="chev" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none; transform: rotate(0deg)"><path d="M6 9l6 6 6-6"></path></svg></button>
+<div data-m="acc" style="grid-template-rows: 0fr"><div style="overflow: hidden"><p style="margin: 0; padding-bottom: 16px; font-size: 14px; color: #4A4E57">回饋類越短越好（120–200ms），版面變化稍長（320ms），進場最長（600ms）。</p></div></div>
+</div><div style="border-bottom: 1px solid #E4E4DF">
+<button type="button" aria-expanded="false" style="font: inherit; cursor: pointer; width: 100%; border: 0; background: transparent; padding: 16px 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 16px; font-weight: 500; color: #16181D; text-align: left">會影響無障礙嗎？<svg data-m="chev" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none; transform: rotate(0deg)"><path d="M6 9l6 6 6-6"></path></svg></button>
+<div data-m="acc" style="grid-template-rows: 0fr"><div style="overflow: hidden"><p style="margin: 0; padding-bottom: 16px; font-size: 14px; color: #4A4E57">所有元件都能用鍵盤操作，並尊重系統的「減少動態」設定。</p></div></div>
+</div>
+</div>
+</div>
+</section>
+<section style="padding: 32px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECECE7; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: #2F5BEA">08</span>
+<h2 style="margin: 0; font-size: 22px; font-weight: 600">分頁切換</h2>
+<p style="margin: 0; font-size: 14px; color: #5B5F68">白色指示塊 320ms 滑到所選分頁，下方內容以 600ms 淡入上移進場。</p>
+</div>
+<div style="flex: 1; min-height: 200px; padding: 32px; border-radius: 12px; background: #FAFAF8; border: 1px solid #ECECE7; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px">
+<div style="width: 100%; display: flex; flex-direction: column; gap: 16px">
+<div role="tablist" aria-label="案例段落" style="position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 4px; border-radius: 999px; background: #ECECE7">
+<span data-m="ind" aria-hidden="true" style="position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc((100% - 8px) / 4); border-radius: 999px; background: #FFFFFF; box-shadow: 0 2px 8px rgba(22,24,29,.12); transform: translateX(0%)"></span>
+<button type="button" role="tab" aria-selected="true" style="position: relative; font: inherit; cursor: pointer; border: 0; background: transparent; min-height: 44px; border-radius: 999px; font-size: 14px; font-weight: 600; color: #16181D; transition: color 200ms cubic-bezier(.2,.8,.2,1)">背景</button><button type="button" role="tab" aria-selected="false" style="position: relative; font: inherit; cursor: pointer; border: 0; background: transparent; min-height: 44px; border-radius: 999px; font-size: 14px; font-weight: 500; color: #5B5F68; transition: color 200ms cubic-bezier(.2,.8,.2,1)">研究</button><button type="button" role="tab" aria-selected="false" style="position: relative; font: inherit; cursor: pointer; border: 0; background: transparent; min-height: 44px; border-radius: 999px; font-size: 14px; font-weight: 500; color: #5B5F68; transition: color 200ms cubic-bezier(.2,.8,.2,1)">設計</button><button type="button" role="tab" aria-selected="false" style="position: relative; font: inherit; cursor: pointer; border: 0; background: transparent; min-height: 44px; border-radius: 999px; font-size: 14px; font-weight: 500; color: #5B5F68; transition: color 200ms cubic-bezier(.2,.8,.2,1)">成果</button>
+</div>
+<p data-m="reveal" data-k="k0" style="margin: 0; padding: 16px 20px; border-radius: 12px; background: #FFFFFF; border: 1px solid #ECECE7; font-size: 15px; color: #3E424B">背景：專案目標、我的角色與團隊。</p>
+</div>
+</div>
+</section>
+</div>
+
+</div>
+<script src="ds.js"></script>
+</body>
+</html>

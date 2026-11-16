@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>洗車服務介面設計</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Noto+Sans+TC:wght@400;500;700&amp;family=Space+Grotesk:wght@500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body data-brand-icon="assets/images/carwash-icon.png">
+<div class="page page-case">
+
+<header id="site-header" class="site-header">
+<nav aria-label="主要導覽" class="site-nav"><a href="index.html" class="brand">Yu Jhen Chen</a></nav>
+</header>
+<script src="js/site.js"></script>
+
+<main id="top">
+
+<section class="c-section2">
+<div class="wrap-8">
+<span class="tag">B2B2C 中台</span><span class="tag">Webview</span><span class="tag">車主服務</span>
+</div>
+<h1 class="carwash-h11">洗車服務Webview平台</h1>
+<p class="carwash-p1">OpenHub 洗車中台的標準 Webview 介面，車主可以找店、購券並以 QR Code 核銷。已上線於 My Toyota 與 Lexus Plus App。</p>
+<dl class="c-dl1">
+
+<div><dt class="label-caps">我的角色</dt><dd class="meta-value">產品設計師</dd></div>
+
+<div><dt class="label-caps">團隊</dt><dd class="meta-value">PO、PM、企劃、UI/UX、前後端RD</dd></div>
+
+<div><dt class="label-caps">平台</dt><dd class="meta-value">Webview 標準介面</dd></div>
+
+<div><dt class="label-caps">產品階段</dt><dd class="meta-value">2025-11月 正式上線</dd></div>
+
+</dl>
+
+</section>
+
+<img src="assets/images/carwash-cover.png" alt="洗車中台 Car Wash Platform WebView 封面：站點資訊、地圖探索與洗車券匣三支手機畫面" width="1920" height="1080" class="carwash-img3">
+
+<div class="c-div5">
+<section class="case-section">
+<div>
+<p class="section-num" data-ln="num">01</p>
+<h2 class="section-title">背景與角色</h2>
+</div>
+<div class="c-div6">
+<p class="c-p1">OpenHub 於 2025 年建置洗車服務中台：合作 App 可以 Webview 嵌入標準介面，或依 API 文件自建介面；另有管理後台處理帳務與使用者管理。經商業模式分析與需求訪談後，開發分為兩個階段。</p>
+
+</div>
+</section>
+
+<section class="case-section">
+<div>
+<p class="section-num" data-ln="num">02</p>
+<h2 class="section-title">設計重點</h2>
+</div>
+<ol class="c-ol1">
+
+<li class="point-row">
+<span class="num-accent">01</span>
+<div class="stack-4"><h3 class="title-20">一套介面，嵌入多個品牌</h3><p class="text-16-muted">介面會出現在不同品牌的 App 裡，因此以白、灰為主，避免與合作品牌衝突，再以藍色點綴呼應洗車意象。</p></div>
+</li>
+
+<li class="point-row">
+<span class="num-accent">02</span>
+<div class="stack-4"><h3 class="title-20">洗車券跨 App 共用</h3><p class="text-16-muted">My Toyota 與 Lexus Plus 的用戶皆為和泰 Pay 會員，透過客製化會員資料庫，讓洗車券在兩個 App 間共用。</p></div>
+</li>
+
+<li class="point-row">
+<span class="num-accent">03</span>
+<div class="stack-4"><h3 class="title-20">序號制洗車券與 QR 核銷</h3><p class="text-16-muted">洗車券以序號管理，由品牌提供或系統產生；車主出示 QR Code，店家以 POS 掃描完成核銷。</p></div>
+</li>
+
+</ol>
+<figure class="c-figure1">
+<img src="assets/images/carwash-architecture.png" alt="洗車中台產品架構圖：應用端為車廠 App 與洗車服務 Webview，維運中台包含洗車序號庫、會員、兌換購買、金流、洗車地圖、核銷與 OpenHub 維運後台，供應端為各洗車服務方" class="carwash-img4">
+<figcaption class="caption">產品架構：應用端（車廠 App 與洗車服務 Webview）、維運中台（序號庫、會員、兌換購買、洗車地圖、核銷與維運後台）、供應端（各洗車服務方）。金流為虛線，第一階段尚未執行。</figcaption>
+</figure>
+</section>
+
+<section class="case-section">
+<div>
+<p class="section-num" data-ln="num">03</p>
+<h2 class="section-title">介面展示</h2>
+</div>
+<div class="c-div2"><p class="carwash-p2">洗車服務 Webview 的實際介面，依車主的使用情境分成兩組：先找到想去的洗車據點，再到現場出示洗車券完成核銷。</p></div>
+<div class="carwash-div3">
+<div class="carwash-div4">
+<span class="carwash-span1">A</span>
+<h3 class="title-22">找店</h3>
+<p class="text-15">從地圖找到據點、看清楚站點資訊，並收藏常去的站點。</p>
+</div>
+<ul class="carwash-ul1">
+
+<li class="carwash-li1">
+<div class="carwash-div1">
+<div class="carwash-div2">
+<img src="assets/images/carwash-map.png" alt="地圖探索畫面：地圖上標示各品牌洗車據點，下方為復興加油站的資訊卡" class="carwash-img1">
+</div>
+</div>
+<div class="stack-4"><h4 class="title-20">地圖探索</h4><p class="text-15">以品牌圖示在地圖上標出據點，可搜尋地點與篩選。點選據點即出現資訊卡，顯示營業狀態、洗車類型與地址，並可直接導航；卡片下方會提醒車主手上有幾張可用的洗車券。</p></div>
+</li>
+
+<li class="carwash-li1">
+<div class="carwash-div1">
+<div class="carwash-div2">
+<img src="assets/images/carwash-station.png" alt="站點資訊畫面：站點照片、營業狀態、持有的洗車券與推薦產品" class="carwash-img1">
+</div>
+</div>
+<div class="stack-4"><h4 class="title-20">站點資訊</h4><p class="text-15">集中呈現站點照片、營業狀態、距離、洗車類型與營業時間。持有該品牌洗車券時可「立即使用」，沒有券也能從推薦產品直接前往兌換。</p></div>
+</li>
+
+<li class="carwash-li1">
+<div class="carwash-div1">
+<div class="carwash-div2">
+<img src="assets/images/carwash-favorites.png" alt="站點收藏畫面：已收藏的加油站列表" class="carwash-img1">
+</div>
+</div>
+<div class="stack-4"><h4 class="title-20">站點收藏</h4><p class="text-15">把常去的據點收成清單，一眼比較距離、營業時間與洗車類型，點愛心即可加入或取消收藏。</p></div>
+</li>
+
+</ul>
+</div>
+<div class="carwash-div3">
+<div class="carwash-div4">
+<span class="carwash-span1">B</span>
+<h3 class="title-22">用券</h3>
+<p class="text-15">管理手上的洗車券，到店出示條碼完成核銷。</p>
+</div>
+<ul class="carwash-ul1">
+
+<li class="carwash-li1">
+<div class="carwash-div1">
+<div class="carwash-div2">
+<img src="assets/images/carwash-wallet.png" alt="洗車券匣畫面：可使用的洗車券列表，顯示張數與到期日" class="carwash-img1">
+</div>
+</div>
+<div class="stack-4"><h4 class="title-20">洗車券匣</h4><p class="text-15">以「可使用」與「已使用／失效」分頁管理洗車券，可依品牌與洗車類型篩選。同款券合併顯示張數，並標示即將到期的張數與日期，也可轉贈給他人。</p></div>
+</li>
+
+<li class="carwash-li1">
+<div class="carwash-div1">
+<div class="carwash-div2">
+<img src="assets/images/carwash-redeem.png" alt="使用洗車券畫面：QR Code、條碼、更新倒數與洗車券序號" class="carwash-img1">
+</div>
+</div>
+<div class="stack-4"><h4 class="title-20">使用洗車券</h4><p class="text-15">到店後出示 QR Code 與條碼，由店家掃描核銷。條碼定時更新並顯示倒數，搭配「截圖無效」提示降低盜用風險；下方列出洗車券序號與有效期限。</p></div>
+</li>
+
+</ul>
+</div>
+</section>
+
+<section class="case-section">
+<div>
+<p class="section-num" data-ln="num">04</p>
+<h2 class="section-title">成果</h2>
+</div>
+<div class="c-div7">
+<div class="c-div8">
+
+<div class="stat-card">
+<span class="stat-value">800+ 張</span>
+<span class="text-14">上線首 7 天售出洗車券</span>
+</div>
+
+<div class="stat-card">
+<span class="stat-value">65%+</span>
+<span class="text-14">2025 年底核銷率</span>
+</div>
+
+<div class="stat-card">
+<span class="stat-value">3 個月</span>
+<span class="text-14">完成第一階段上線</span>
+</div>
+
+</div>
+<p class="c-p3"><strong class="c-strong2">下一步：</strong>第二階段將新增信用卡付款，並依 GA 數據優化體驗、設計導流與留存機制。</p>
+<p class="c-p3">這個專案讓我學到，設計一套要嵌入不同品牌 App 的介面，中性不等於沒有個性：以白、灰為底讓介面融入各品牌，再用一致的藍色與元件建立洗車服務自己的辨識度。以管理者身分參與企劃，也讓我更早理解序號、核銷與對帳的限制，設計時能把後台流程一起考慮進去。</p>
+</div>
+</section>
+</div>
+
+<section class="c-section3">
+<a href="itraq.html" class="c-a5" data-h="card">
+<div class="c-div9">
+<span class="c-span1">Next Project</span>
+<span class="c-span2">iTRAQ 車隊管理系統</span>
+<span class="c-span3">看下一個案例
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</span>
+</div>
+<img src="assets/images/itraq-cover.png" alt="iTRAQ Fleet Management System 主視覺" class="c-img1">
+</a>
+</section>
+
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+
+</div>
+</body>
+</html>
